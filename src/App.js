@@ -5,20 +5,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import React, { useState } from 'react';
 
-const [formPage, setFormPage] = useState(0);
-
-//Page 0
-const [firstName, setFirstName] = useState(null);
-const [lastName, setLastName] = useState(null);
-const [email, setEmail] = useState(null);
-const [admittanceYear, setAdmittanceYear] = useState(null);
-const [graduationYear, setGraduationYear] = useState(null);
-const [displayValidation, setDisplayValidation] = useState(false);
-
-//Page 1
-const [preference, setPreference] = useState(null);
-
-
 //Form entry component for input
 function FormEntry(props){
   function validationStyle(){
@@ -153,44 +139,56 @@ function FormNavigator(props){
   } else return "something went wrong. ERROR CODE 4"
 }
 
-function sendData(){
-  toast.success('🦄 Wow so easy!', {
-    position: "bottom-right",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    });
 
-  let data_payload = {
-    "firstName" : firstName,
-    "lastName" : lastName,
-    "email" : email,
-    "admittanceYear" : admittanceYear,
-    "graduationYear" : graduationYear,
-    "preference" : preference
-  }
-  console.log(data_payload);
-  
-   (async () => {
-     const rawResponse = await fetch("http://192.168.1.40:6001/api/subscribers", {
-       method: "POST",
-       headers: {
-         "Content-Type": "application/json"
-       },
-         body: JSON.stringify(data_payload)
-   })
-   console.log("Try to send");
-   const content = await rawResponse.json();
-   })
-}
 
 function App() {
 
-  
+  function sendData(){
+    toast.success('🦄 Wow so easy!', {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
 
+    let data_payload = {
+      "firstName" : firstName,
+      "lastName" : lastName,
+      "email" : email,
+      "admittanceYear" : admittanceYear,
+      "graduationYear" : graduationYear,
+      "preference" : preference
+    }
+    console.log(data_payload);
+    
+     (async () => {
+       const rawResponse = await fetch("http://192.168.1.40:6001/api/subscribers", {
+         method: "POST",
+         headers: {
+           "Content-Type": "application/json"
+         },
+           body: JSON.stringify(data_payload)
+     })
+     console.log("Try to send");
+     const content = await rawResponse.json();
+     })
+  }
+
+  const [formPage, setFormPage] = useState(0);
+
+  //Page 0
+  const [firstName, setFirstName] = useState(null);
+  const [lastName, setLastName] = useState(null);
+  const [email, setEmail] = useState(null);
+  const [admittanceYear, setAdmittanceYear] = useState(null);
+  const [graduationYear, setGraduationYear] = useState(null);
+  const [displayValidation, setDisplayValidation] = useState(false);
+
+  //Page 1
+  const [preference, setPreference] = useState(null);
 
 function FormHeaderNavigator() {
   if (formPage === 0) return (<span className="text-3xl">Let’s get you going with our newsletter🚀</span>)
