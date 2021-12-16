@@ -182,13 +182,14 @@ function App() {
 
     const send = async () => {
       try {
+        console.log("trying");
         const response = await toast.promise(
           fetch("https://dkak.xn--scha-poa.com/api/subscribers", {
-            "method": "POST",
-            "headers": {
+            method: "POST",
+            headers: {
               "Content-Type": "application/json"
             },
-              "body": JSON.stringify(data_payload)
+              body: JSON.stringify(data_payload)
           }),
           {
             pending: 'Your data is traveling the world 🌍',
