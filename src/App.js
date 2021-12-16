@@ -5,6 +5,20 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import React, { useState } from 'react';
 
+const [formPage, setFormPage] = useState(0);
+
+//Page 0
+const [firstName, setFirstName] = useState(null);
+const [lastName, setLastName] = useState(null);
+const [email, setEmail] = useState(null);
+const [admittanceYear, setAdmittanceYear] = useState(null);
+const [graduationYear, setGraduationYear] = useState(null);
+const [displayValidation, setDisplayValidation] = useState(false);
+
+//Page 1
+const [preference, setPreference] = useState(null);
+
+
 //Form entry component for input
 function FormEntry(props){
   function validationStyle(){
@@ -177,18 +191,6 @@ function App() {
 
   
 
-  const [formPage, setFormPage] = useState(0);
-
-  //Page 0
-  const [firstName, setFirstName] = useState(null);
-  const [lastName, setLastName] = useState(null);
-  const [email, setEmail] = useState(null);
-  const [admittanceYear, setAdmittanceYear] = useState(null);
-  const [graduationYear, setGraduationYear] = useState(null);
-  const [displayValidation, setDisplayValidation] = useState(false);
-
-  //Page 1
-  const [preference, setPreference] = useState(null);
 
 function FormHeaderNavigator() {
   if (formPage === 0) return (<span className="text-3xl">Let’s get you going with our newsletter🚀</span>)
