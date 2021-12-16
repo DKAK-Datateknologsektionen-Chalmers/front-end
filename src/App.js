@@ -198,9 +198,9 @@ function App() {
   }
 
 function FormHeaderNavigator() {
-  if (formPage === 0) return (<span className="text-3xl">Let’s get you going with our newsletter🚀</span>)
-  else if (formPage === 1) return (<span className="text-3xl">Let’s get your preferences right 📌</span>)
-  else if (formPage === 2) return (<span className="text-3xl">You’re done ✨</span>)
+  if (formPage === 0) return (<span className="text-2xl sm:text-3xl">Let’s get you going with our newsletter🚀</span>)
+  else if (formPage === 1) return (<span className="text-2xl sm:text-3xl">Let’s get your preferences right 📌</span>)
+  else if (formPage === 2) return (<span className="text-2xl sm:text-3xl">You’re done ✨</span>)
   else return "something went wrong. ERROR CODE 5"
 }
 
@@ -224,7 +224,9 @@ function FormHeaderNavigator() {
           src={logo_white_large}/>
       </div>
       <div className="bg-white h-5/6 absolute rounded-perf
-        top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4/6 
+        transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2
+        w-full
+        sm:w-4/6 
         xl:top-10 xl:left-60pct xl:right-0 xl:transform-none xl:w-2/6 ">
         <div className="w-full">
         <img alt="logo" src={logo} className="select-none	mx-auto my-12"/>
