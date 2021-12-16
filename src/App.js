@@ -134,7 +134,7 @@ function FormNavigator(props){
       <div>
         <div className="pt-10">
           <span className="text-3xl">Many thanks for subscribing. Let’s meet soon 👋🏽</span>
-        </div>,
+        </div>
         <div className="m-12">
           <span>Oh hey. So we don't really have a privacy policy just yet. 
           However, you can unsubscribe at any time and all of your data 
