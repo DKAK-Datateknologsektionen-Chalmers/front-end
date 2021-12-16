@@ -183,7 +183,7 @@ function App() {
     const send = async () => {
       try {
         const response = await toast.promise(
-          fetch("http://192.168.1.40:6001/api/subscribers", {
+          fetch("https://dkak.xn--scha-poa.com/api/subscribers", {
             "method": "POST",
             "headers": {
               "Content-Type": "application/json"
