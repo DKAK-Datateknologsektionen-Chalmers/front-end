@@ -65,37 +65,43 @@ function FormNavigator(props){
   if (props.formPage === 0){
     //Could probably use map to generate here
     return [
-      <FormEntry 
+      <FormEntry
+        key="First Name" 
         displayValidation = {props.displayValidation} 
         validation={firstName != null} 
         default="First Name" 
         data={props.firstName} 
         f={props.setFirstName}/>,
       <FormEntry 
+        key="Last Name"
         displayValidation = {props.displayValidation} 
         validation={lastName != null} 
         default="Last Name" 
         data={props.lastName} 
         f={props.setLastName}/>,
       <FormEntry 
+        key="Email Address"
         displayValidation = {props.displayValidation} 
         validation={email != null} 
         default="Email Address" 
         data={props.email} 
         f={props.setEmail}/>,
       <FormEntry 
+        key="Year of Admittance"
         displayValidation = {props.displayValidation} 
         validation={admittanceYear != null} 
         default="Year of Admittance" 
         data={props.admittanceYear} 
         f={props.setAdmittanceYear}/>,
       <FormEntry 
+        key="Year of Graduation"
         displayValidation = {props.displayValidation} 
         validation={graduationYear != null} 
         default="Year of Graduation" 
         data={props.graduationYear} 
         f={props.setGraduationYear}/>,
-      <button 
+      <button
+        key="Continue Button"
         className="font-semibold hover:bg-sucess-dark items-center justify-center flex h-12 w-full rounded-perf bg-success my-8"
         onClick={() => clickAction()}>
         Continue
@@ -126,10 +132,10 @@ function FormNavigator(props){
   else if (props.formPage === 2){
     return (
       <div>
-        <div key="end_msg" className="pt-10">
+        <div className="pt-10">
           <span className="text-3xl">Many thanks for subscribing. Let’s meet soon 👋🏽</span>
         </div>,
-        <div key="end_msg_pvc" className="m-12">
+        <div className="m-12">
           <span>Oh hey. So we don't really have a privacy policy just yet. 
           However, you can unsubscribe at any time and all of your data 
           on our service will be instantly removed.</span>
