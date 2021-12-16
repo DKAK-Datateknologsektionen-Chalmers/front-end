@@ -13,16 +13,18 @@ function FormEntry(props){
     } else if (props.displayValidation) return {"background-color": "#F2A1A1"}
   }
   return (
-    <input 
-    type="text"
-    value={props.data == null ? props.default : props.data}  
-    className="hover:bg-grey-dark items-center flex h-12 w-full rounded-perf bg-grey my-4
-      text-center pl-0
-      xl:text-left xl:pl-10"
-    style={validationStyle()}
-    onFocus={e => e.target.value === props.default ? props.f("") : null}
-    onBlur={e => e.target.value === "" ? props.f(null): null}
-    onChange={e => props.f(e.target.value)}
+    <input
+      name={props.nameID}
+      autocomplete="on"
+      type="text"
+      value={props.data == null ? props.default : props.data}  
+      className="hover:bg-grey-dark items-center flex h-12 w-full rounded-perf bg-grey my-4
+        text-center pl-0
+        xl:text-left xl:pl-10"
+      style={validationStyle()}
+      onFocus={e => e.target.value === props.default ? props.f("") : null}
+      onBlur={e => e.target.value === "" ? props.f(null): null}
+      onChange={e => props.f(e.target.value)}
     />
   )
 }
@@ -66,42 +68,46 @@ function FormNavigator(props){
     //Could probably use map to generate here
     return [
       <FormEntry
-        key="First Name" 
+        key="fname" 
+        nameID="fname"
+        type="text"
         displayValidation = {props.displayValidation} 
         validation={firstName != null} 
         default="First Name" 
         data={props.firstName} 
         f={props.setFirstName}/>,
       <FormEntry 
-        key="Last Name"
+        key="lname"
+        nameID="lname"
         displayValidation = {props.displayValidation} 
         validation={lastName != null} 
         default="Last Name" 
         data={props.lastName} 
         f={props.setLastName}/>,
       <FormEntry 
-        key="Email Address"
+        key="email"
+        nameID="email"
         displayValidation = {props.displayValidation} 
         validation={email != null} 
         default="Email Address" 
         data={props.email} 
         f={props.setEmail}/>,
       <FormEntry 
-        key="Year of Admittance"
+        key="yoa"
         displayValidation = {props.displayValidation} 
         validation={admittanceYear != null} 
         default="Year of Admittance" 
         data={props.admittanceYear} 
         f={props.setAdmittanceYear}/>,
       <FormEntry 
-        key="Year of Graduation"
+        key="yog"
         displayValidation = {props.displayValidation} 
         validation={graduationYear != null} 
         default="Year of Graduation" 
         data={props.graduationYear} 
         f={props.setGraduationYear}/>,
       <button
-        key="Continue Button"
+        key="c"
         className="font-semibold hover:bg-sucess-dark items-center justify-center flex h-12 w-full rounded-perf bg-success my-8"
         onClick={() => clickAction()}>
         Continue
@@ -223,10 +229,8 @@ function FormHeaderNavigator() {
           className="select-none	absolute -left-96 -top-48 opacity-10 max-w-max" 
           src={logo_white_large}/>
       </div>
-      <div className="bg-white absolute rounded-perf
-        transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2
-        w-full
-        sm:w-4/6 
+      <div className="bg-white absolute top-0 w-full h-full
+        sm:h-auto sm:transform sm:-translate-x-1/2 sm:-translate-y-1/2 sm:top-1/2 sm:left-1/2 sm:w-4/6 sm:rounded-perf
         xl:top-10 xl:left-60pct xl:right-0 xl:transform-none xl:w-2/6 ">
         <div className="w-full">
         <img alt="logo" src={logo} className="select-none	mx-auto my-12"/>
@@ -234,7 +238,7 @@ function FormHeaderNavigator() {
         <div className="w-full text-center px-10 -my-6">
           <FormHeaderNavigator/>
         </div>
-        <div className="w-full text-center px-10 py-12 h-inherit">
+        <form autocomplete="on" className="w-full text-center px-10 py-12 h-inherit">
           <FormNavigator
             firstName={firstName}
             setFirstName={setFirstName}
@@ -252,7 +256,7 @@ function FormHeaderNavigator() {
             displayValidation={displayValidation}
             setDisplayValidation={setDisplayValidation}
             sendData={sendData}/>
-        </div>
+        </form>
       </div>
     </div>
   );
