@@ -173,6 +173,7 @@ function App() {
            "body": JSON.stringify(data_payload)
      })
      const content = await rawResponse.json();
+     console.log(content)
      })
   }
 
