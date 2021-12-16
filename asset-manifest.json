@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "./static/css/main.67c54fa2.chunk.css",
-    "main.js": "./static/js/main.e245d059.chunk.js",
-    "main.js.map": "./static/js/main.e245d059.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.54aa105b.js",
-    "runtime-main.js.map": "./static/js/runtime-main.54aa105b.js.map",
-    "static/css/2.123f092d.chunk.css": "./static/css/2.123f092d.chunk.css",
-    "static/js/2.8d95d324.chunk.js": "./static/js/2.8d95d324.chunk.js",
-    "static/js/2.8d95d324.chunk.js.map": "./static/js/2.8d95d324.chunk.js.map",
-    "static/js/3.fb76fffc.chunk.js": "./static/js/3.fb76fffc.chunk.js",
-    "static/js/3.fb76fffc.chunk.js.map": "./static/js/3.fb76fffc.chunk.js.map",
-    "index.html": "./index.html",
-    "static/css/2.123f092d.chunk.css.map": "./static/css/2.123f092d.chunk.css.map",
-    "static/css/main.67c54fa2.chunk.css.map": "./static/css/main.67c54fa2.chunk.css.map",
-    "static/js/2.8d95d324.chunk.js.LICENSE.txt": "./static/js/2.8d95d324.chunk.js.LICENSE.txt",
-    "static/media/dkak_logo.6e148f53.svg": "./static/media/dkak_logo.6e148f53.svg",
-    "static/media/dkak_white_large.c125a73c.svg": "./static/media/dkak_white_large.c125a73c.svg"
+    "main.css": "/DKAK-Datateknologsektionen-Chalmers/front-end/index.html/static/css/main.8994cf3c.chunk.css",
+    "main.js": "/DKAK-Datateknologsektionen-Chalmers/front-end/index.html/static/js/main.859fdae5.chunk.js",
+    "main.js.map": "/DKAK-Datateknologsektionen-Chalmers/front-end/index.html/static/js/main.859fdae5.chunk.js.map",
+    "runtime-main.js": "/DKAK-Datateknologsektionen-Chalmers/front-end/index.html/static/js/runtime-main.8ebdaaf4.js",
+    "runtime-main.js.map": "/DKAK-Datateknologsektionen-Chalmers/front-end/index.html/static/js/runtime-main.8ebdaaf4.js.map",
+    "static/css/2.123f092d.chunk.css": "/DKAK-Datateknologsektionen-Chalmers/front-end/index.html/static/css/2.123f092d.chunk.css",
+    "static/js/2.8d95d324.chunk.js": "/DKAK-Datateknologsektionen-Chalmers/front-end/index.html/static/js/2.8d95d324.chunk.js",
+    "static/js/2.8d95d324.chunk.js.map": "/DKAK-Datateknologsektionen-Chalmers/front-end/index.html/static/js/2.8d95d324.chunk.js.map",
+    "static/js/3.fb76fffc.chunk.js": "/DKAK-Datateknologsektionen-Chalmers/front-end/index.html/static/js/3.fb76fffc.chunk.js",
+    "static/js/3.fb76fffc.chunk.js.map": "/DKAK-Datateknologsektionen-Chalmers/front-end/index.html/static/js/3.fb76fffc.chunk.js.map",
+    "index.html": "/DKAK-Datateknologsektionen-Chalmers/front-end/index.html/index.html",
+    "static/css/2.123f092d.chunk.css.map": "/DKAK-Datateknologsektionen-Chalmers/front-end/index.html/static/css/2.123f092d.chunk.css.map",
+    "static/css/main.8994cf3c.chunk.css.map": "/DKAK-Datateknologsektionen-Chalmers/front-end/index.html/static/css/main.8994cf3c.chunk.css.map",
+    "static/js/2.8d95d324.chunk.js.LICENSE.txt": "/DKAK-Datateknologsektionen-Chalmers/front-end/index.html/static/js/2.8d95d324.chunk.js.LICENSE.txt",
+    "static/media/dkak_logo.6e148f53.svg": "/DKAK-Datateknologsektionen-Chalmers/front-end/index.html/static/media/dkak_logo.6e148f53.svg",
+    "static/media/dkak_white_large.c125a73c.svg": "/DKAK-Datateknologsektionen-Chalmers/front-end/index.html/static/media/dkak_white_large.c125a73c.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.54aa105b.js",
+    "static/js/runtime-main.8ebdaaf4.js",
     "static/css/2.123f092d.chunk.css",
     "static/js/2.8d95d324.chunk.js",
-    "static/css/main.67c54fa2.chunk.css",
-    "static/js/main.e245d059.chunk.js"
+    "static/css/main.8994cf3c.chunk.css",
+    "static/js/main.859fdae5.chunk.js"
   ]
 }
