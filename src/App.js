@@ -104,32 +104,38 @@ function FormNavigator(props){
   } else if (props.formPage === 1){
     return [
       <PreferenceButton
+        key="pref_1"
         f={{"updatePage": props.setFormPage, "updatePreference": props.setPreference, "sendData": props.sendData}}
         text="Celebrator: Only Large Events" 
         textContent="(Once or Twice every year)"
         type="celeberator"/>,
       <PreferenceButton 
-      f={{"updatePage": props.setFormPage, "updatePreference": props.setPreference, "sendData": props.sendData}}
-      text="Occasional: Meetups and Large Events" 
-      textContent="(1 Event per quarter)"
-      type="celeberator"/>,
+        key="pref_2"
+        f={{"updatePage": props.setFormPage, "updatePreference": props.setPreference, "sendData": props.sendData}}
+        text="Occasional: Meetups and Large Events" 
+        textContent="(1 Event per quarter)"
+        type="celeberator"/>,
       <PreferenceButton 
-      f={{"updatePage": props.setFormPage, "updatePreference": props.setPreference, "sendData": props.sendData}}
-      text="Ambitious: All of the above + Hang Arounds" 
-      textContent="(1 Event every month)"
-      type="celeberator"/>
+        key="pref_3"
+        f={{"updatePage": props.setFormPage, "updatePreference": props.setPreference, "sendData": props.sendData}}
+        text="Ambitious: All of the above + Hang Arounds" 
+        textContent="(1 Event every month)"
+        type="celeberator"/>
      ]
-  } else if (props.formPage === 2){
-    return [
-      <div className="pt-10">
-        <span className="text-3xl">Many thanks for subscribing. Let’s meet soon 👋🏽</span>
-      </div>,
-      <div className="m-12">
-        <span>Oh hey. So we don't really have a privacy policy just yet. 
+  } 
+  else if (props.formPage === 2){
+    return (
+      <div>
+        <div key="end_msg" className="pt-10">
+          <span className="text-3xl">Many thanks for subscribing. Let’s meet soon 👋🏽</span>
+        </div>,
+        <div key="end_msg_pvc" className="m-12">
+          <span>Oh hey. So we don't really have a privacy policy just yet. 
           However, you can unsubscribe at any time and all of your data 
           on our service will be instantly removed.</span>
+        </div>
       </div>
-    ]
+    )
   } else return "something went wrong. ERROR CODE 4"
 }
 
@@ -148,14 +154,15 @@ function App() {
       progress: undefined,
       });
 
-    // let data_payload = {
-    //   "firstName" : firstName,
-    //   "lastName" : lastName,
-    //   "email" : email,
-    //   "admittanceYear" : admittanceYear,
-    //   "graduationYear" : graduationYear,
-    //   "preference" : preference
-    // }
+    let data_payload = {
+      "firstName" : firstName,
+      "lastName" : lastName,
+      "email" : email,
+      "admittanceYear" : admittanceYear,
+      "graduationYear" : graduationYear,
+      "preference" : preference
+    }
+    console.log(data_payload)
     
     // (async () => {
     //   const rawResponse = await fetch("INTERNAL API ENDPOINT", {
@@ -203,7 +210,10 @@ function FormHeaderNavigator() {
         pauseOnHover
       />
       <div className="w-full h-full overflow-hidden relative">
-        <img className="select-none	absolute -left-96 -top-48 opacity-10 max-w-max" src={logo_white_large}/>
+        <img 
+          alt="dkak logo large white in background" 
+          className="select-none	absolute -left-96 -top-48 opacity-10 max-w-max" 
+          src={logo_white_large}/>
       </div>
       <div className="bg-white h-5/6 absolute rounded-perf
         top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4/6 
