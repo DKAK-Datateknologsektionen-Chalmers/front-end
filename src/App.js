@@ -165,7 +165,7 @@ function App() {
     //console.log(data_payload);
     
      (async () => {
-       const rawResponse = await fetch("192.168.1.40:6001/api/subscribers", {
+       const rawResponse = await fetch("http://192.168.1.40:6001/api/subscribers", {
          method: "POST",
          headers: {
            "Content-Type": "application/json"
