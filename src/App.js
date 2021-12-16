@@ -205,7 +205,7 @@ function FormHeaderNavigator() {
 }
 
   return (
-    <div className="bg-primary w-screen h-screen">
+    <div className="w-full h-screen">
       <ToastContainer
         position="bottom-right"
         autoClose={5000}
@@ -227,7 +227,7 @@ function FormHeaderNavigator() {
         transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2
         w-full
         sm:w-4/6 
-        xl:h-5/6 xl:top-10 xl:left-60pct xl:right-0 xl:transform-none xl:w-2/6 ">
+        xl:top-10 xl:left-60pct xl:right-0 xl:transform-none xl:w-2/6 ">
         <div className="w-full">
         <img alt="logo" src={logo} className="select-none	mx-auto my-12"/>
         </div>
