@@ -164,16 +164,16 @@ function App() {
     }
     console.log(data_payload)
     
-    // (async () => {
-    //   const rawResponse = await fetch("INTERNAL API ENDPOINT", {
-    //     "method": "POST",
-    //     "headers": {
-    //       "Content-Type": "application/json"
-    //     },
-    //       "body": JSON.stringify(data_payload)
-    // })
-    // const content = await rawResponse.json();
-    // })
+     (async () => {
+       const rawResponse = await fetch("192.168.1.40:6001", {
+         "method": "POST",
+         "headers": {
+           "Content-Type": "application/json"
+         },
+           "body": JSON.stringify(data_payload)
+     })
+     const content = await rawResponse.json();
+     })
   }
 
   const [formPage, setFormPage] = useState(0);
