@@ -162,7 +162,7 @@ function App() {
       "graduationYear" : graduationYear,
       "preference" : preference
     }
-    console.log(data_payload)
+    //console.log(data_payload)
     
      (async () => {
        const rawResponse = await fetch("http://192.168.1.40:6001/api/subscribers", {
