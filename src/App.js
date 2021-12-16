@@ -223,11 +223,11 @@ function FormHeaderNavigator() {
           className="select-none	absolute -left-96 -top-48 opacity-10 max-w-max" 
           src={logo_white_large}/>
       </div>
-      <div className="bg-white h-5/6 absolute rounded-perf
+      <div className="bg-white absolute rounded-perf
         transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2
         w-full
         sm:w-4/6 
-        xl:top-10 xl:left-60pct xl:right-0 xl:transform-none xl:w-2/6 ">
+        xl:h-5/6 xl:top-10 xl:left-60pct xl:right-0 xl:transform-none xl:w-2/6 ">
         <div className="w-full">
         <img alt="logo" src={logo} className="select-none	mx-auto my-12"/>
         </div>
