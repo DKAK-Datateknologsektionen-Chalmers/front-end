@@ -13,10 +13,14 @@ module.exports = {
      fontFamily: {
        'poppins':['Poppins', 'ui-sans-serif']
      },
-     borderRadius: {
-       'perf': '2rem'
-     },
-    extend: {},
+    extend: {
+      borderRadius: {
+        'perf': '2rem'
+      },
+      inset: {
+        '60pct' : '60%'
+      }
+    }
   },
   variants: {
     extend: {},
