@@ -15,7 +15,7 @@ function FormEntry(props){
   return (
     <input
       name={props.nameID}
-      autocomplete="on"
+      autoComplete="on"
       type="text"
       value={props.data == null ? props.default : props.data}  
       className="hover:bg-grey-dark items-center flex h-12 w-full rounded-perf bg-grey my-4
@@ -143,7 +143,7 @@ function FormNavigator(props){
         </div>
         <div className="m-12">
           <span>Oh hey. So we don't really have a privacy policy just yet. 
-          However, you can unsubscribe at any time and all of your data 
+          However, you can unsubscribe at any time from one of our emails and all of your data 
           on our service will be instantly removed.</span>
         </div>
       </div>
@@ -170,15 +170,8 @@ function App() {
 
   //post data handler
   function sendData(){
-    toast.success('🦄 Wow so easy!', {
-      position: "bottom-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      });
+
+    //toast.success('🦄 Wow so easy!');
 
     let data_payload = {
       "firstName" : firstName,
@@ -188,19 +181,26 @@ function App() {
       "graduationYear" : graduationYear,
       "preference" : preference
     }
-    
-     const send = async () => {
-       const rawResponse = await fetch("http://192.168.1.40:6001/api/subscribers", {
-         "method": "POST",
-         "headers": {
-           "Content-Type": "application/json"
-         },
-           "body": JSON.stringify(data_payload)
-     })
-     const content = await rawResponse.json();
-     console.log(content)
-     }
-     send()
+
+    const send = async () => {
+      try {
+        const response = await toast.promise(
+          fetch("http://192.168.1.40:6001/api/subscribers", {
+            "method": "POST",
+            "headers": {
+              "Content-Type": "application/json"
+            },
+              "body": JSON.stringify(data_payload)
+          }),
+          {
+            pending: 'Your data is traveling the world 🌍',
+            success: 'We got it 👌',
+            error: 'Oh no 🥺 Internal Server Error'
+          }
+        );
+      } catch{}
+    }
+    send()
   }
 
 function FormHeaderNavigator() {
@@ -238,7 +238,7 @@ function FormHeaderNavigator() {
         <div className="w-full text-center px-10 -my-6">
           <FormHeaderNavigator/>
         </div>
-        <form autocomplete="on" className="w-full text-center px-10 py-12 h-inherit">
+        <form autoComplete="on" className="w-full text-center px-10 py-12 h-inherit">
           <FormNavigator
             firstName={firstName}
             setFirstName={setFirstName}
