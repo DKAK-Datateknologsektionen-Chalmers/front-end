@@ -1,7 +1,8 @@
 import './App.css';
 import logo from './dkak_logo.svg'
 import logo_white_large from './dkak_white_large.svg'
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import React, { useState } from 'react';
 
 //Form entry component for input
@@ -26,7 +27,7 @@ function FormEntry(props){
   )
 }
 
-//Form entry component for input
+//Preference button and sendout
 function PreferenceButton(props){
   return (
     <button 
@@ -34,6 +35,7 @@ function PreferenceButton(props){
     onClick={() => {
       props.f.updatePage(2)
       props.f.updatePreference(props.type)
+      props.f.sendData()
     }}
     >
       <div>
@@ -102,17 +104,17 @@ function FormNavigator(props){
   } else if (props.formPage === 1){
     return [
       <PreferenceButton
-        f={{"updatePage": props.setFormPage, "updatePreference": props.setPreference}}
+        f={{"updatePage": props.setFormPage, "updatePreference": props.setPreference, "sendData": props.sendData}}
         text="Celebrator: Only Large Events" 
         textContent="(Once or Twice every year)"
         type="celeberator"/>,
       <PreferenceButton 
-      f={{"updatePage": props.setFormPage, "updatePreference": props.setPreference}}
+      f={{"updatePage": props.setFormPage, "updatePreference": props.setPreference, "sendData": props.sendData}}
       text="Occasional: Meetups and Large Events" 
       textContent="(1 Event per quarter)"
       type="celeberator"/>,
       <PreferenceButton 
-      f={{"updatePage": props.setFormPage, "updatePreference": props.setPreference}}
+      f={{"updatePage": props.setFormPage, "updatePreference": props.setPreference, "sendData": props.sendData}}
       text="Ambitious: All of the above + Hang Arounds" 
       textContent="(1 Event every month)"
       type="celeberator"/>
@@ -131,7 +133,41 @@ function FormNavigator(props){
   } else return "something went wrong. ERROR CODE 4"
 }
 
+
+
 function App() {
+
+  function sendData(){
+    toast.success('🦄 Wow so easy!', {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
+
+    // let data_payload = {
+    //   "firstName" : firstName,
+    //   "lastName" : lastName,
+    //   "email" : email,
+    //   "admittanceYear" : admittanceYear,
+    //   "graduationYear" : graduationYear,
+    //   "preference" : preference
+    // }
+    
+    // (async () => {
+    //   const rawResponse = await fetch("INTERNAL API ENDPOINT", {
+    //     "method": "POST",
+    //     "headers": {
+    //       "Content-Type": "application/json"
+    //     },
+    //       "body": JSON.stringify(data_payload)
+    // })
+    // const content = await rawResponse.json();
+    // })
+  }
 
   const [formPage, setFormPage] = useState(0);
 
@@ -155,6 +191,17 @@ function FormHeaderNavigator() {
 
   return (
     <div className="bg-primary w-screen h-screen">
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <div className="w-full h-full overflow-hidden relative">
         <img className="select-none	absolute -left-96 -top-48 opacity-10 max-w-max" src={logo_white_large}/>
       </div>
@@ -183,7 +230,8 @@ function FormHeaderNavigator() {
             setFormPage={setFormPage}
             setPreference={setPreference}
             displayValidation={displayValidation}
-            setDisplayValidation={setDisplayValidation}/>
+            setDisplayValidation={setDisplayValidation}
+            sendData={sendData}/>
         </div>
       </div>
     </div>
