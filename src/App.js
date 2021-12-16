@@ -149,6 +149,20 @@ function FormNavigator(props){
 
 function App() {
 
+  const [formPage, setFormPage] = useState(0);
+
+  //Page 0
+  const [firstName, setFirstName] = useState(null);
+  const [lastName, setLastName] = useState(null);
+  const [email, setEmail] = useState(null);
+  const [admittanceYear, setAdmittanceYear] = useState(null);
+  const [graduationYear, setGraduationYear] = useState(null);
+  const [displayValidation, setDisplayValidation] = useState(false);
+
+  //Page 1
+  const [preference, setPreference] = useState(null);
+
+  //post data handler
   function sendData(){
     toast.success('🦄 Wow so easy!', {
       position: "bottom-right",
@@ -169,7 +183,7 @@ function App() {
       "preference" : preference
     }
     
-     (async () => {
+     const send = async () => {
        const rawResponse = await fetch("http://192.168.1.40:6001/api/subscribers", {
          "method": "POST",
          "headers": {
@@ -179,21 +193,9 @@ function App() {
      })
      const content = await rawResponse.json();
      console.log(content)
-     })
+     }
+     send()
   }
-
-  const [formPage, setFormPage] = useState(0);
-
-  //Page 0
-  const [firstName, setFirstName] = useState(null);
-  const [lastName, setLastName] = useState(null);
-  const [email, setEmail] = useState(null);
-  const [admittanceYear, setAdmittanceYear] = useState(null);
-  const [graduationYear, setGraduationYear] = useState(null);
-  const [displayValidation, setDisplayValidation] = useState(false);
-
-  //Page 1
-  const [preference, setPreference] = useState(null);
 
 function FormHeaderNavigator() {
   if (formPage === 0) return (<span className="text-3xl">Let’s get you going with our newsletter🚀</span>)
