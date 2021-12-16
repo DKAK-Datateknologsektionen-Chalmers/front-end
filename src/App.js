@@ -171,8 +171,6 @@ function App() {
   //post data handler
   function sendData(){
 
-    //toast.success('🦄 Wow so easy!');
-
     let data_payload = {
       "firstName" : firstName,
       "lastName" : lastName,
@@ -214,7 +212,7 @@ function FormHeaderNavigator() {
     <div className="w-full h-screen">
       <ToastContainer
         position="bottom-right"
-        autoClose={5000}
+        autoClose={10000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
