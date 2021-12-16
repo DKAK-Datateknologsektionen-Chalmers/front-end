@@ -221,13 +221,13 @@ function FormHeaderNavigator() {
         draggable
         pauseOnHover
       />
-      <div className="w-full h-full overflow-hidden relative">
+      <div className="bg-white sm:bg-primary w-full h-full overflow-hidden relative">
         <img 
           alt="dkak logo large white in background" 
-          className="select-none	absolute -left-96 -top-48 opacity-10 max-w-max" 
+          className="hidden sm:block select-none	absolute -left-96 -top-48 opacity-10 max-w-max" 
           src={logo_white_large}/>
       </div>
-      <div className="bg-white absolute top-0 w-full h-full
+      <div className="bg-white absolute top-0 w-full 
         sm:h-auto sm:transform sm:-translate-x-1/2 sm:-translate-y-1/2 sm:top-1/2 sm:left-1/2 sm:w-4/6 sm:rounded-perf
         xl:top-10 xl:left-60pct xl:right-0 xl:transform-none xl:w-2/6 ">
         <div className="w-full">
