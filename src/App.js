@@ -126,13 +126,13 @@ function FormNavigator(props){
         f={{"updatePage": props.setFormPage, "updatePreference": props.setPreference, "sendData": props.sendData}}
         text="Occasional: Meetups and Large Events" 
         textContent="(1 Event per quarter)"
-        type="celeberator"/>,
+        type="occasional"/>,
       <PreferenceButton 
         key="pref_3"
         f={{"updatePage": props.setFormPage, "updatePreference": props.setPreference, "sendData": props.sendData}}
         text="Ambitious: All of the above + Hang Arounds" 
         textContent="(1 Event every month)"
-        type="celeberator"/>
+        type="ambitious"/>
      ]
   } 
   else if (props.formPage === 2){
