@@ -196,6 +196,7 @@ function App() {
             error: 'Oh no 🥺 Internal Server Error'
           }
         );
+        console.log(response)
       } catch{}
     }
     send()
