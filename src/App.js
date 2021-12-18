@@ -18,9 +18,10 @@ function FormEntry(props){
       autoComplete="on"
       type="text"
       value={props.data == null ? props.default : props.data}  
-      className="hover:bg-grey-dark items-center flex h-12 w-full rounded-perf bg-grey my-4
+      className="hover:bg-grey-dark items-center flex h-12 w-full rounded-perf bg-grey my-4 
         text-center pl-0
-        xl:text-left xl:pl-10"
+        xl:text-left xl:pl-10
+        hres:h-36 hres:text-4xl hres:text-center"
       style={validationStyle()}
       onFocus={e => e.target.value === props.default ? props.f("") : null}
       onBlur={e => e.target.value === "" ? props.f(null): null}
@@ -33,7 +34,7 @@ function FormEntry(props){
 function PreferenceButton(props){
   return (
     <button 
-    className="hover:bg-grey-dark items-center justify-start h-20 w-full rounded-perf bg-grey my-4"
+    className="hover:bg-grey-dark items-center justify-start h-20 w-full rounded-perf bg-grey my-4 hres:h-48 hres:text-4xl"
     onClick={() => {
       props.f.updatePage(2)
       props.f.setPreference(props.type)
@@ -109,7 +110,8 @@ function FormNavigator(props){
         f={props.setGraduationYear}/>,
       <button
         key="c"
-        className="font-semibold hover:bg-sucess-dark items-center justify-center flex h-12 w-full rounded-perf bg-success my-8"
+        className="font-semibold hover:bg-sucess-dark items-center justify-center flex h-12 w-full rounded-perf bg-success my-8
+        hres:h-48 hres:text-5xl"
         onClick={() => clickAction()}>
         Continue
       </button>
@@ -205,10 +207,15 @@ function App() {
   }
 
 function FormHeaderNavigator() {
-  if (formPage === 0) return (<span className="text-2xl sm:text-3xl">Let’s get you going with our newsletter🚀</span>)
-  else if (formPage === 1) return (<span className="text-2xl sm:text-3xl">Let’s get your preferences right 📌</span>)
-  else if (formPage === 2) return (<span className="text-2xl sm:text-3xl">You’re done ✨</span>)
-  else return "something went wrong. ERROR CODE 5"
+  let message = ""
+  if (formPage === 0) message = "Let’s get you going with our newsletter🚀"
+  else if (formPage === 1) message ="Let’s get your preferences right 📌"
+  else if (formPage === 2) message = "You’re done ✨"
+  else message = "something went wrong. ERROR CODE 5"
+
+  return (
+    (<span className="text-2xl sm:text-3xl hres:text-6xl">{message}</span>)
+  )
 }
 
   return (
@@ -227,19 +234,19 @@ function FormHeaderNavigator() {
       <div className="bg-white sm:bg-primary w-full h-full overflow-hidden relative">
         <img 
           alt="dkak logo large white in background" 
-          className="hidden sm:block select-none	absolute -left-96 -top-48 opacity-10 max-w-max" 
+          className="hidden sm:block select-none absolute -left-96 -top-28 opacity-10 h-full min-h-bglogo" 
           src={logo_white_large}/>
       </div>
       <div className="bg-white absolute top-0 w-full 
         sm:h-auto sm:transform sm:-translate-x-1/2 sm:-translate-y-1/2 sm:top-1/2 sm:left-1/2 sm:w-4/6 sm:rounded-perf
-        xl:top-10 xl:left-60pct xl:right-0 xl:transform-none xl:w-2/6 ">
+        xl:top-10 xl:left-60pct xl:right-0 xl:transform-none xl:w-2/6 xl:h-5/6 xl:min-h-perf hres:min-h-hperf">
         <div className="w-full">
-        <img alt="logo" src={logo} className="select-none	mx-auto my-12"/>
+        <img alt="logo" src={logo} className="select-none	mx-auto mt-12 hres:h-48 hres:mt-32"/>
         </div>
-        <div className="w-full text-center px-10 -my-6">
+        <div className="w-full text-center px-10 my-6 hres:py-12">
           <FormHeaderNavigator/>
         </div>
-        <form autoComplete="on" className="w-full text-center px-10 py-12 h-inherit">
+        <form autoComplete="on" className="w-full text-center px-10 h-inherit">
           <FormNavigator
             firstName={firstName}
             setFirstName={setFirstName}

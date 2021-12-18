@@ -19,6 +19,14 @@ module.exports = {
       },
       inset: {
         '60pct' : '60%'
+      },
+      minHeight: {
+        'perf': '45rem',
+        'bglogo' : '70rem',
+        'hperf' : '105rem'
+      }, 
+      screens: {
+        'hres': '2000px',
       }
     }
   },
