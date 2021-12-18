@@ -36,8 +36,9 @@ function PreferenceButton(props){
     className="hover:bg-grey-dark items-center justify-start h-20 w-full rounded-perf bg-grey my-4"
     onClick={() => {
       props.f.updatePage(2)
-      props.f.updatePreference(props.type)
-      props.f.sendData()
+      props.f.setPreference(props.type)
+      //send the new preference up since sendData is cashed with old pref.
+      props.f.sendData(props.type)
     }}
     >
       <div>
@@ -117,19 +118,19 @@ function FormNavigator(props){
     return [
       <PreferenceButton
         key="pref_1"
-        f={{"updatePage": props.setFormPage, "updatePreference": props.setPreference, "sendData": props.sendData}}
+        f={{"updatePage": props.setFormPage, "setPreference": props.setPreference, "sendData": props.sendData}}
         text="Celebrator: Only Large Events" 
         textContent="(Once or Twice every year)"
         type="celeberator"/>,
       <PreferenceButton 
         key="pref_2"
-        f={{"updatePage": props.setFormPage, "updatePreference": props.setPreference, "sendData": props.sendData}}
+        f={{"updatePage": props.setFormPage, "setPreference": props.setPreference, "sendData": props.sendData}}
         text="Occasional: Meetups and Large Events" 
         textContent="(1 Event per quarter)"
         type="occasional"/>,
       <PreferenceButton 
         key="pref_3"
-        f={{"updatePage": props.setFormPage, "updatePreference": props.setPreference, "sendData": props.sendData}}
+        f={{"updatePage": props.setFormPage, "setPreference": props.setPreference, "sendData": props.sendData}}
         text="Ambitious: All of the above + Hang Arounds" 
         textContent="(1 Event every month)"
         type="ambitious"/>
@@ -169,20 +170,20 @@ function App() {
   const [preference, setPreference] = useState(null);
 
   //post data handler
-  function sendData(){
-
+  function sendData(selectedPreference){
+    console.log(preference)
     let data_payload = {
       "firstName" : firstName,
       "lastName" : lastName,
       "email" : email,
       "admittanceYear" : admittanceYear,
       "graduationYear" : graduationYear,
-      "preference" : preference
+      "preference" : selectedPreference
     }
+    console.log(data_payload)
 
     const send = async () => {
       try {
-        console.log("trying");
         const response = await toast.promise(
           fetch("https://dkak.xn--scha-poa.com/api/subscribers", {
             method: "POST",
