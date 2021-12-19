@@ -15,18 +15,21 @@ module.exports = {
      },
     extend: {
       borderRadius: {
+        'perf/2': '1.5rem',
         'perf': '2rem'
       },
       inset: {
         '60pct' : '60%'
       },
       minHeight: {
-        'perf': '45rem',
+        'perf': '40rem',
+        'default' : '48rem',
         'bglogo' : '70rem',
-        'hperf' : '105rem'
+        'hperf' : '85rem'
       }, 
       screens: {
-        'hres': '2000px',
+        'hres': '2560px',
+        '4k': '3840px'
       }
     }
   },

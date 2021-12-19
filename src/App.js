@@ -20,8 +20,10 @@ function FormEntry(props){
       value={props.data == null ? props.default : props.data}  
       className="hover:bg-grey-dark items-center flex h-12 w-full rounded-perf bg-grey my-4 
         text-center pl-0
-        xl:text-left xl:pl-10
-        hres:h-36 hres:text-4xl hres:text-center"
+        xl:h-10 xl:rounded-perf/2
+        2xl:h-14 2xl:rounded-perf/2 2xl:text-xl
+        hres:h-24 hres:text-4xl hres:text-center hres:rounded-perf
+        4k:h-36 4k:my-6"
       style={validationStyle()}
       onFocus={e => e.target.value === props.default ? props.f("") : null}
       onBlur={e => e.target.value === "" ? props.f(null): null}
@@ -34,7 +36,11 @@ function FormEntry(props){
 function PreferenceButton(props){
   return (
     <button 
-    className="hover:bg-grey-dark items-center justify-start h-20 w-full rounded-perf bg-grey my-4 hres:h-48 hres:text-4xl"
+    className="
+      hover:bg-grey-dark items-center justify-start h-20 w-full rounded-perf bg-grey my-4 
+      xl:h-16
+      2xl:h-20
+      hres:h-48 hres:text-4xl"
     onClick={() => {
       props.f.updatePage(2)
       props.f.setPreference(props.type)
@@ -111,7 +117,10 @@ function FormNavigator(props){
       <button
         key="c"
         className="font-semibold hover:bg-sucess-dark items-center justify-center flex h-12 w-full rounded-perf bg-success my-8
-        hres:h-48 hres:text-5xl"
+        xl:h-14
+        2xl:h-16 2xl:text-2xl
+        hres:h-36 hres:text-5xl
+        4k:h-48 4k:my-16"
         onClick={() => clickAction()}>
         Continue
       </button>
@@ -140,9 +149,11 @@ function FormNavigator(props){
   } 
   else if (props.formPage === 2){
     return (
-      <div>
+      <div className="
+      hres:text-4xl
+      4k:text-5xl">
         <div className="pt-10">
-          <span className="text-3xl">Many thanks for subscribing. Let’s meet soon 👋🏽</span>
+          <span>Many thanks for subscribing. Let’s meet soon 👋🏽</span>
         </div>
         <div className="m-12">
           <span>Oh hey. So we don't really have a privacy policy just yet. 
@@ -214,7 +225,7 @@ function FormHeaderNavigator() {
   else message = "something went wrong. ERROR CODE 5"
 
   return (
-    (<span className="text-2xl sm:text-3xl hres:text-6xl">{message}</span>)
+    (<span className="text-2xl 2xl:text-3xl hres:text-5xl 4k:text-6xl">{message}</span>)
   )
 }
 
@@ -239,11 +250,21 @@ function FormHeaderNavigator() {
       </div>
       <div className="bg-white absolute top-0 w-full 
         sm:h-auto sm:transform sm:-translate-x-1/2 sm:-translate-y-1/2 sm:top-1/2 sm:left-1/2 sm:w-4/6 sm:rounded-perf
-        xl:top-10 xl:left-60pct xl:right-0 xl:transform-none xl:w-2/6 xl:h-5/6 xl:min-h-perf hres:min-h-hperf">
+        xl:top-10 xl:left-60pct xl:right-0 xl:transform-none xl:w-2/6 xl:h-5/6 xl:min-h-perf 
+        2xl:min-h-default 
+        hres:min-h-hperf">
         <div className="w-full">
-        <img alt="logo" src={logo} className="select-none	mx-auto mt-12 hres:h-48 hres:mt-32"/>
+        <img alt="logo" src={logo} className="
+          select-none	mx-auto mt-12
+          xl:h-20 
+          2xl:h-24
+          hres:h-44 hres:mt-32
+          4k:h-60"/>
         </div>
-        <div className="w-full text-center px-10 my-6 hres:py-12">
+        <div className="
+          w-full text-center px-10 my-6
+          2xl:py-2 
+          hres:py-10">
           <FormHeaderNavigator/>
         </div>
         <form autoComplete="on" className="w-full text-center px-10 h-inherit">
