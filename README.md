@@ -1,3 +1,13 @@
+# DKAK Frontend
+Mina kingen
+
+## Technologies used
+<img src="https://user-images.githubusercontent.com/42417723/146743717-c9ad808a-6e5c-4495-a9ad-3a18c6d45059.png" alt="react logo" width="150"/>
+<img src="https://user-images.githubusercontent.com/42417723/146743757-a05aa357-55db-4e5a-a968-754568aab6e7.png" alt="react logo" width="200"/>
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
