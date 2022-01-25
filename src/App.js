@@ -217,6 +217,7 @@ function App() {
     send()
   }
 
+  
 function FormHeaderNavigator() {
   let message = ""
   if (formPage === 0) message = "Let’s get you going with our newsletter🚀"
