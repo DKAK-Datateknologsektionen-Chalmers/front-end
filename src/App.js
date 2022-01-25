@@ -198,7 +198,7 @@ function App() {
     const send = async () => {
       try {
         const response = await toast.promise(
-          fetch("https://dkak.rejv.tech/api/subscribers", {
+          fetch("https://dkak.dtek.se/api/subscribers", {
             method: "POST",
             headers: {
               "Content-Type": "application/json"
